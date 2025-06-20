@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A04</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+        
+        .info {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        .subjects-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .subject {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .subject:hover {
+            background: rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subject-title {
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .topics {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            margin-top: 20px;
+        }
+        
+        .topics.show {
+            display: block;
+            opacity: 1;
+        }
+        
+        .topic {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        
+        .topic:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateX(10px);
+        }
+        
+        .topic-title {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: #87CEEB;
+        }
+        
+        .topic-description {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .expand-indicator {
+            float: right;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .subject.expanded .expand-indicator {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="subjects-container">
+        <div class="subject" onclick="toggleSubject('mathematics')">
+            <div class="subject-title">
+                Mathematics
+                <span class="expand-indicator">▶</span>
+            </div>
+            <div class="topics" id="mathematics-topics">
+                <a href="algebra.html" class="topic">
+                    <div class="topic-title">Algebra</div>
+                    <div class="topic-description">Explore equations, variables, and mathematical relationships</div>
+                </a>
+                <a href="geometry.html" class="topic">
+                    <div class="topic-title">Geometry</div>
+                    <div class="topic-description">Study shapes, angles, and spatial relationships</div>
+                </a>
+                <a href="calculus.html" class="topic">
+                    <div class="topic-title">Calculus</div>
+                    <div class="topic-description">Understand derivatives, integrals, and limits</div>
+                </a>
+                <a href="statistics.html" class="topic">
+                    <div class="topic-title">Statistics</div>
+                    <div class="topic-description">Analyze data and probability distributions</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="subject" onclick="toggleSubject('science')">
+            <div class="subject-title">
+                Science
+                <span class="expand-indicator">▶</span>
+            </div>
+            <div class="topics" id="science-topics">
+                <a href="physics.html" class="topic">
+                    <div class="topic-title">Physics</div>
+                    <div class="topic-description">Discover the laws governing matter and energy</div>
+                </a>
+                <a href="chemistry.html" class="topic">
+                    <div class="topic-title">Chemistry</div>
+                    <div class="topic-description">Explore atomic structure and chemical reactions</div>
+                </a>
+                <a href="biology.html" class="topic">
+                    <div class="topic-title">Biology</div>
+                    <div class="topic-description">Study living organisms and life processes</div>
+                </a>
+                <a href="astronomy.html" class="topic">
+                    <div class="topic-title">Astronomy</div>
+                    <div class="topic-description">Journey through space and celestial objects</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="subject" onclick="toggleSubject('history')">
+            <div class="subject-title">
+                History
+                <span class="expand-indicator">▶</span>
+            </div>
+            <div class="topics" id="history-topics">
+                <a href="ancient.html" class="topic">
+                    <div class="topic-title">Ancient Civilizations</div>
+                    <div class="topic-description">Explore Egypt, Greece, Rome, and other early societies</div>
+                </a>
+                <a href="medieval.html" class="topic">
+                    <div class="topic-title">Medieval Period</div>
+                    <div class="topic-description">Discover the Middle Ages and feudal systems</div>
+                </a>
+                <a href="renaissance.html" class="topic">
+                    <div class="topic-title">Renaissance</div>
+                    <div class="topic-description">The rebirth of art, science, and culture</div>
+                </a>
+                <a href="modern.html" class="topic">
+                    <div class="topic-title">Modern Era</div>
+                    <div class="topic-description">Industrial revolution to contemporary times</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateBackgroundImage() {
+            const now = new Date();
+            const hour = now.getHours();
+            let backgroundImage;
+            
+            // Determine time period and background color
+            if (hour >= 6 && hour < 12) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Morning%2C_just_after_sunrise%2C_Namibia.jpg';
+            } else if (hour >= 12 && hour < 18) {
+                backgroundImage = 'https://media.wnyc.org/i/800/0/h/85/1/160924154.jpg';
+            } else if (hour >= 18 && hour < 21) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg/500px-Savault_Chapel_Under_Milky_Way_BLS.jpg';
+            } else {
+                backgroundImage = 'https://www.ouinolanguages.com/assets/French/vocab/24/images/pic11.jpg';
+            }
+            
+            // Apply the background Image
+            document.body.style.backgroundImage = `url(${backgroundImage})`;
+        }
+        
+        function toggleSubject(subjectId) {
+            const topics = document.getElementById(subjectId + '-topics');
+            const subject = topics.parentElement;
+            
+            // Close all other subjects
+            const allSubjects = document.querySelectorAll('.subject');
+            allSubjects.forEach(s => {
+                if (s !== subject) {
+                    s.classList.remove('expanded');
+                    const otherTopics = s.querySelector('.topics');
+                    otherTopics.classList.remove('show');
+                }
+            });
+            
+            // Toggle current subject
+            if (subject.classList.contains('expanded')) {
+                subject.classList.remove('expanded');
+                topics.classList.remove('show');
+            } else {
+                subject.classList.add('expanded');
+                topics.classList.add('show');
+            }
+        }
+        
+        // Update immediately when page loads
+        updateBackgroundImage();
+        
+        // Update every minute
+        setInterval(updateBackgroundImage, 60000);
+    </script>
+</body>
+</html>

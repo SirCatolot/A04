@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Mathematics</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+        
+        .content {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            background: rgba(255, 215, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #FFD700;
+            margin: 20px 0;
+        }
+        
+        .equation {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Homepage</a>
+        
+        <h1>Statistics</h1>
+        
+        <div class="content">
+            <p>Statistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. In our information-rich world, statistical literacy has become essential for making informed decisions, understanding research findings, and navigating the constant stream of data that shapes our daily lives.</p>
+            
+            <div class="highlight">
+                <strong>Two Main Areas:</strong> Descriptive statistics summarizes and describes data characteristics, while inferential statistics uses sample data to make conclusions about larger populations.
+            </div>
+            
+            <p>At its foundation, statistics helps us understand uncertainty and variation in the world around us. Through probability theory and statistical methods, we can quantify confidence in our conclusions, identify patterns in seemingly random data, and make predictions with measurable uncertainty.</p>
+            
+            <div class="equation">
+                Standard Deviation: σ = √(Σ(x - μ)² / N)
+            </div>
+            
+            <p>Statistical thinking involves recognizing that variability is natural and that we need systematic methods to distinguish between meaningful patterns and random noise. This includes understanding concepts like correlation versus causation, sampling bias, and the importance of experimental design in drawing valid conclusions.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="https://i0.wp.com/www.msicertified.com/wp-content/uploads/2023/01/Standard_deviation_diagram.png?fit=1920%2C960&ssl=1" alt="Bell curve showing normal distribution and standard deviations" class="topic-image">
+        </div>
+        
+        <div class="content">
+            <p>Modern statistics powers everything from medical research and quality control to market analysis and artificial intelligence. Machine learning algorithms rely heavily on statistical principles, while fields like epidemiology, psychology, and economics depend on statistical methods to validate theories and guide policy decisions. In the age of big data, statistical knowledge has become one of the most valuable skills across virtually every profession.</p>
+        </div>
+    </div>
+
+    <script>
+        function updateBackgroundImage() {
+            const now = new Date();
+            const hour = now.getHours();
+            let backgroundImage;
+            
+            if (hour >= 6 && hour < 12) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Morning%2C_just_after_sunrise%2C_Namibia.jpg';
+            } else if (hour >= 12 && hour < 18) {
+                backgroundImage = 'https://media.wnyc.org/i/800/0/h/85/1/160924154.jpg';
+            } else if (hour >= 18 && hour < 21) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg/500px-Savault_Chapel_Under_Milky_Way_BLS.jpg';
+            } else {
+                backgroundImage = 'https://www.ouinolanguages.com/assets/French/vocab/24/images/pic11.jpg';
+            }
+            
+            document.body.style.backgroundImage = `url(${backgroundImage})`;
+        }
+        
+        updateBackgroundImage();
+        setInterval(updateBackgroundImage, 60000);
+    </script>
+</body>
+</html>

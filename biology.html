@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology - Science</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #87CEEB;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+        
+        .content {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            background: rgba(135, 206, 235, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #87CEEB;
+            margin: 20px 0;
+        }
+        
+        .equation {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Homepage</a>
+        
+        <h1>Biology</h1>
+        
+        <div class="content">
+            <p>Biology is the scientific study of life and living organisms, encompassing everything from the smallest bacteria to the largest mammals, and from individual cells to complex ecosystems. This vast field explores the structure, function, growth, evolution, and distribution of living things, seeking to understand the fundamental processes that make life possible.</p>
+            
+            <div class="highlight">
+                <strong>Major Areas:</strong> Molecular biology studies life at the cellular level, ecology examines interactions between organisms and their environment, genetics explores heredity and gene function, and evolutionary biology investigates how species change over time.
+            </div>
+            
+            <p>Central to biology is the cell theory, which states that all living things are composed of cells, cells are the basic unit of life, and all cells come from pre-existing cells. This fundamental principle connects all life on Earth, from single-celled bacteria to multicellular organisms like humans, highlighting the unity underlying biological diversity.</p>
+            
+            <div class="equation">
+                6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂ (Photosynthesis)
+            </div>
+            
+            <p>Evolution by natural selection provides the unifying framework for all biological knowledge, explaining how the incredible diversity of life arose from common ancestors through the process of descent with modification. DNA serves as the universal genetic code, storing information that determines the characteristics of all living organisms.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="https://ars.els-cdn.com/content/image/3-s2.0-B9780123971791000051-f05-02-9780123971791.jpg" alt="DNA double helix structure" class="topic-image">
+        </div>
+        
+        <div class="content">
+            <p>Modern biology has transformed medicine, agriculture, and environmental science through advances in biotechnology, genetic engineering, and conservation biology. From developing gene therapies and personalized medicine to creating drought-resistant crops and understanding climate change impacts on ecosystems, biological research continues to address critical challenges facing humanity while revealing the extraordinary complexity and beauty of life on Earth.</p>
+        </div>
+    </div>
+
+    <script>
+        function updateBackgroundImage() {
+            const now = new Date();
+            const hour = now.getHours();
+            let backgroundImage;
+            
+            if (hour >= 6 && hour < 12) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Morning%2C_just_after_sunrise%2C_Namibia.jpg';
+            } else if (hour >= 12 && hour < 18) {
+                backgroundImage = 'https://media.wnyc.org/i/800/0/h/85/1/160924154.jpg';
+            } else if (hour >= 18 && hour < 21) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg/500px-Savault_Chapel_Under_Milky_Way_BLS.jpg';
+            } else {
+                backgroundImage = 'https://www.ouinolanguages.com/assets/French/vocab/24/images/pic11.jpg';
+            }
+            
+            document.body.style.backgroundImage = `url(${backgroundImage})`;
+        }
+        
+        updateBackgroundImage();
+        setInterval(updateBackgroundImage, 60000);
+    </script>
+</body>
+</html>

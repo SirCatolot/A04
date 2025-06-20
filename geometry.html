@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry - Mathematics</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+        
+        .content {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            background: rgba(255, 215, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #FFD700;
+            margin: 20px 0;
+        }
+        
+        .equation {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Homepage</a>
+        
+        <h1>Geometry</h1>
+        
+        <div class="content">
+            <p>Geometry is the branch of mathematics concerned with questions of shape, size, relative position of figures, and the properties of space. Dating back to ancient civilizations, geometry has evolved from practical surveying and construction techniques into a sophisticated mathematical discipline that underlies much of modern science and technology.</p>
+            
+            <div class="highlight">
+                <strong>Ancient Origins:</strong> The word "geometry" comes from Greek words meaning "earth measurement." Ancient Egyptians and Babylonians used geometric principles for building pyramids and tracking celestial movements.
+            </div>
+            
+            <p>Euclidean geometry, based on Euclid's Elements written around 300 BCE, forms the foundation of geometric understanding. It deals with points, lines, angles, surfaces, and solids in flat (two-dimensional) and three-dimensional space, following logical axioms and postulates that have remained largely unchanged for over 2,000 years.</p>
+            
+            <div class="equation">
+                Pythagorean Theorem: a² + b² = c²
+            </div>
+            
+            <p>Beyond Euclidean geometry lies a rich world of non-Euclidean geometries, including spherical and hyperbolic geometry, which have revolutionized our understanding of space and contributed to Einstein's theory of relativity. These geometries show that parallel lines don't always behave as we might expect in everyday experience.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="https://i.ytimg.com/vi/nxi8gV6_50o/maxresdefault.jpg" alt="Euclid's proof of the Pythagorean theorem" class="topic-image">
+        </div>
+        
+        <div class="content">
+            <p>Today, geometry plays a crucial role in computer graphics, architecture, robotics, and GPS navigation systems. From the curves of a sports car to the algorithms that render 3D movies, geometric principles shape the world around us in ways both visible and invisible, making it one of the most practically applicable areas of mathematics.</p>
+        </div>
+    </div>
+
+    <script>
+        function updateBackgroundImage() {
+            const now = new Date();
+            const hour = now.getHours();
+            let backgroundImage;
+            
+            if (hour >= 6 && hour < 12) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Morning%2C_just_after_sunrise%2C_Namibia.jpg';
+            } else if (hour >= 12 && hour < 18) {
+                backgroundImage = 'https://media.wnyc.org/i/800/0/h/85/1/160924154.jpg';
+            } else if (hour >= 18 && hour < 21) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg/500px-Savault_Chapel_Under_Milky_Way_BLS.jpg';
+            } else {
+                backgroundImage = 'https://www.ouinolanguages.com/assets/French/vocab/24/images/pic11.jpg';
+            }
+            
+            document.body.style.backgroundImage = `url(${backgroundImage})`;
+        }
+        
+        updateBackgroundImage();
+        setInterval(updateBackgroundImage, 60000);
+    </script>
+</body>
+</html>

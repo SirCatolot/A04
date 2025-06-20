@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics - Science</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #87CEEB;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+        
+        .content {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            background: rgba(135, 206, 235, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #87CEEB;
+            margin: 20px 0;
+        }
+        
+        .equation {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Homepage</a>
+        
+        <h1>Physics</h1>
+        
+        <div class="content">
+            <p>Physics is the fundamental science that seeks to understand how the universe works. From the smallest subatomic particles to the largest structures in the cosmos, physics explores the basic principles governing matter, energy, space, and time. It forms the foundation upon which all other natural sciences are built.</p>
+            
+            <div class="highlight">
+                <strong>Core Areas:</strong> Classical mechanics studies motion and forces, thermodynamics deals with heat and energy, electromagnetism explores electric and magnetic phenomena, and quantum mechanics describes the behavior of matter at atomic scales.
+            </div>
+            
+            <p>The beauty of physics lies in its ability to describe complex phenomena through elegant mathematical relationships. Newton's laws of motion, Maxwell's equations for electromagnetism, and Einstein's theory of relativity demonstrate how simple principles can explain everything from planetary orbits to the behavior of light.</p>
+            
+            <div class="equation">
+                E = mc² (Einstein's Mass-Energy Equivalence)
+            </div>
+            
+            <p>Modern physics has revolutionized our understanding of reality itself. Quantum mechanics reveals that particles can exist in multiple states simultaneously, while relativity shows that space and time are interwoven and can be curved by gravity. These discoveries have led to technologies like lasers, computers, GPS systems, and medical imaging devices.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="https://www.shutterstock.com/shutterstock/videos/17334670/thumb/1.jpg?ip=x480" alt="Newton's cradle demonstrating conservation of momentum" class="topic-image">
+        </div>
+        
+        <div class="content">
+            <p>Physics continues to push the boundaries of human knowledge through cutting-edge research in areas like particle physics, cosmology, and quantum computing. From understanding dark matter and dark energy to developing quantum computers and fusion power, physicists are working to unlock the deepest secrets of nature and harness them for the benefit of humanity.</p>
+        </div>
+    </div>
+
+    <script>
+        function updateBackgroundImage() {
+            const now = new Date();
+            const hour = now.getHours();
+            let backgroundImage;
+            
+            if (hour >= 6 && hour < 12) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Morning%2C_just_after_sunrise%2C_Namibia.jpg';
+            } else if (hour >= 12 && hour < 18) {
+                backgroundImage = 'https://media.wnyc.org/i/800/0/h/85/1/160924154.jpg';
+            } else if (hour >= 18 && hour < 21) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg/500px-Savault_Chapel_Under_Milky_Way_BLS.jpg';
+            } else {
+                backgroundImage = 'https://www.ouinolanguages.com/assets/French/vocab/24/images/pic11.jpg';
+            }
+            
+            document.body.style.backgroundImage = `url(${backgroundImage})`;
+        }
+        
+        updateBackgroundImage();
+        setInterval(updateBackgroundImage, 60000);
+    </script>
+</body>
+</html>

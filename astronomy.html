@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy - Science</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #87CEEB;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+        
+        .content {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            background: rgba(135, 206, 235, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #87CEEB;
+            margin: 20px 0;
+        }
+        
+        .equation {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Homepage</a>
+        
+        <h1>Astronomy</h1>
+        
+        <div class="content">
+            <p>Astronomy is the scientific study of celestial objects, space, and the universe as a whole. This ancient science combines observation, mathematics, and physics to explore everything from planets in our solar system to distant galaxies billions of light-years away, seeking to understand the origin, evolution, and ultimate fate of the cosmos.</p>
+            
+            <div class="highlight">
+                <strong>Major Branches:</strong> Planetary astronomy studies planets and moons, stellar astronomy examines stars and their lifecycles, galactic astronomy focuses on our Milky Way galaxy, and cosmology investigates the universe's large-scale structure and evolution.
+            </div>
+            
+            <p>Modern astronomy began with the revolutionary work of Copernicus, Galileo, and Kepler, who showed that Earth orbits the Sun rather than being the center of the universe. This paradigm shift opened our eyes to the true scale of the cosmos and our place within it, leading to discoveries that continue to reshape our understanding of reality.</p>
+            
+            <div class="equation">
+                L = 4πR²σT⁴ (Stefan-Boltzmann Law for Stellar Luminosity)
+            </div>
+            
+            <p>Through spectroscopy, astronomers can determine the composition, temperature, density, and motion of celestial objects without ever visiting them. This powerful technique reveals that the same physical laws governing Earth also apply throughout the universe, and that we are literally made of "star stuff" - elements forged in the cores of ancient stars.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="https://science.nasa.gov/wp-content/uploads/2023/04/xlarge_web_0-jpg.webp" alt="Hubble Deep Field showing distant galaxies" class="topic-image">
+        </div>
+        
+        <div class="content">
+            <p>Twenty-first century astronomy has entered a golden age with space telescopes, gravitational wave detectors, and the discovery of thousands of exoplanets. We now know that planets are common throughout the galaxy, that supermassive black holes lurk at galaxy centers, and that dark matter and dark energy make up 95% of the universe. As we search for signs of life beyond Earth and probe the deepest mysteries of space and time, astronomy continues to inspire wonder and expand the frontiers of human knowledge.</p>
+        </div>
+    </div>
+
+    <script>
+        function updateBackgroundImage() {
+            const now = new Date();
+            const hour = now.getHours();
+            let backgroundImage;
+            
+            if (hour >= 6 && hour < 12) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Morning%2C_just_after_sunrise%2C_Namibia.jpg';
+            } else if (hour >= 12 && hour < 18) {
+                backgroundImage = 'https://media.wnyc.org/i/800/0/h/85/1/160924154.jpg';
+            } else if (hour >= 18 && hour < 21) {
+                backgroundImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg/500px-Savault_Chapel_Under_Milky_Way_BLS.jpg';
+            } else {
+                backgroundImage = 'https://www.ouinolanguages.com/assets/French/vocab/24/images/pic11.jpg';
+            }
+            
+            document.body.style.backgroundImage = `url(${backgroundImage})`;
+        }
+        
+        updateBackgroundImage();
+        setInterval(updateBackgroundImage, 60000);
+    </script>
+</body>
+</html>
